@@ -4,7 +4,7 @@ function show(par1,par2){
 
 
 
-var note = 60 
+
 function noteResult(){
     var midtermNote,finalNote,message,average;
     midtermNote = Number (document.getElementById("midterm").value);
@@ -16,8 +16,30 @@ function noteResult(){
     else if(isNaN(finalNote)){
         message = ("Please enter a numeric final note")
     }
+    else if (midtermNote <0 || midtermNote > 100){
+        message = "invalid note"
+    }
+    else if (finalNote <0 || finalNote> 100){
+        message = "invalid note"
+    }
     else {
-        message = (average >= 60) ? `You pass the exam. your average note is : ${average.toFixed(2)}` : `You failed. Your average note is: ${average.toFixed(2)} `;
-    }   
+       if(average<=45){
+           message = `FF Your NOte is: ${average}`
+       }
+       else if (average >= 45 && average <=60){
+        message = `DD Your Note is: ${average}`
+       }
+       else if (average > 60 && average <=80){
+        message = `CC Your Note is: ${average}`
+     }
+        else if (average > 80 && average <=90){
+            message = `BB Your Note is: ${average}`
+    }
+
+    else if (average > 90 && average <=100){
+        message = `AA Your Note is: ${average}`
+    }
+    
+}
     show("result",message)
 }
