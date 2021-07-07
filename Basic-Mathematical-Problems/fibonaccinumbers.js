@@ -3,7 +3,7 @@
 
 
 function fibonacci() {
-    let limit = Number(prompt("How many number do you want to get in fibonacci sequence?")); // we get a limit
+    let limit = parseInt(prompt("How many number do you want to get in fibonacci sequence?")); // we get a limit
     numberRange = [];
     fibonacciSequence = [1];  // i put a default 1 to sequence
     let a = 0;
